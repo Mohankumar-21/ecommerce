@@ -1,0 +1,146 @@
+
+.Arrange-product
+{
+    display: flex;  
+    text-align:left ;
+}
+
+.arrange-detail
+{
+    border: 1px solid rgb(203, 202, 202) ;
+    margin: 2rem 2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px grey;
+}
+
+.description
+{
+    margin: 2rem 0rem;
+    text-align: justify;
+    font-family: sans-serif;
+    line-height: 1.5rem;
+  
+}
+
+.Arrange-product img
+{
+   height: 400px;
+   margin: 2rem;
+   margin-top: 3rem;
+}
+
+.arrange-detail .Price
+{
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+span{
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+.addCartBtn
+{
+ 
+    position: relative;
+    left: 45%;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: rgb(98, 20, 199);
+    border: none;
+    font-size: 1rem;
+    margin-top: 2rem;
+    color: white;
+}
+
+.addCartBtn:hover{
+    background-color: rgb(77, 15, 158);
+}
+
+.AddedCart
+{
+    position: relative;
+    left: 45%;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.Backbtn
+{
+    margin-bottom: 2rem;
+    padding: 5px 15px;
+    background-color: rgb(126, 126, 126);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+}
+.description
+{
+    font-size: 1rem;
+}
+
+@media screen and (max-width:1100px)
+{
+    .small-image
+    {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:780px)
+{
+  
+    .Arrange-product
+    {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .Arrange-product img
+    {
+         height: 250px;
+         margin-left: auto;
+         margin-right: auto
+    }
+
+.addCartBtn
+{
+ 
+    position: relative;
+    left: 35%;
+}
+
+.AddedCart
+{
+    position: relative;
+    left: 32%;
+}
+
+.small-image
+{
+    width: 300px;
+}
+    
+}
+
+@media screen and (max-width:460px)
+{
+  
+
+    .Arrange-product img
+    {
+         height: 250px;
+         margin-left: auto;
+         margin-right: auto;
+    }
+ .small-image
+{
+    width: 200px;
+}
+}

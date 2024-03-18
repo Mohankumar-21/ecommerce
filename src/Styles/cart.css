@@ -1,0 +1,116 @@
+.Cart-container
+{
+    list-style-type: none;
+    text-align: center;
+}
+
+.cart-list
+{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(199, 199, 199);
+    box-shadow: 1px 1px 1px rgb(185, 185, 185);
+    border-radius: 10px;
+    justify-content: space-around;
+    margin: 5rem; 
+    padding: 10px;
+}
+
+.Image-Size
+{
+    height: 200px;
+    width: 200px;
+}
+
+.quantity
+{
+   padding: 1px 20px;
+   margin:0 3px;
+}
+
+.btn-incdec
+{
+    padding: 1px 8px;
+    font-weight: bold;
+}
+
+.Car-detail
+{
+    text-align: justify;
+    width: 50%;
+}
+
+.Price{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.product-title
+{
+    font-weight: bold;
+    font-size:17px;
+}
+
+.remove
+{
+    padding: 5px 13px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    color: white;
+}
+
+.Total
+{
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Times', Times, serif;
+}
+.Cart-title
+{
+   margin-top: 1rem;
+}
+
+
+@media screen and (min-width:1120px)
+{
+    .cart-list
+    {
+        margin: 2rem 20rem;
+        justify-content: space-around;
+    }
+
+ 
+}
+
+@media screen and (max-width:780px)
+{
+    .Car-detail
+    {
+        
+        text-align: justify;
+    }
+
+    .cart-list img{
+       margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width:560px)
+{
+    .cart-list
+    {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 250px;
+        margin-left:0px ;
+        margin-right: 0px;
+        margin: 3rem 0;
+    } 
+
+    .Image-Size
+    {
+        height: 150px;
+        width: 150px;
+    }
+}
