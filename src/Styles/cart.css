@@ -18,8 +18,7 @@
 
 .Image-Size
 {
-    height: 200px;
-    width: 200px;
+    height: 150px;
 }
 
 .quantity
@@ -50,6 +49,11 @@
     font-size:17px;
 }
 
+.image-adjust
+{
+   width: 50%;
+}
+
 .remove
 {
     padding: 5px 13px;
@@ -71,6 +75,29 @@
    margin-top: 1rem;
 }
 
+.cart-set
+{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 3rem;
+}
+
+
+
+.cart-count
+{
+   border: 1px solid rgb(234, 234, 234);
+   background: rgb(222, 16, 222);
+   border-radius: 50%;
+   width: 100%;
+   font-size: 14px;
+}
+
+.icon-size
+{
+    font-size: 2rem;
+}
 
 @media screen and (min-width:1120px)
 {
@@ -83,8 +110,19 @@
  
 }
 
-@media screen and (max-width:780px)
+@media screen and (max-width:880px)
 {
+
+    .cart-list
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        margin-left:0px ;
+        margin-right: 0px;
+        margin: 3rem 0;
+    }
     .Car-detail
     {
         
@@ -93,6 +131,7 @@
 
     .cart-list img{
        margin-right: 1rem;
+       margin-bottom: 2rem;
     }
 }
 
@@ -108,9 +147,13 @@
         margin: 3rem 0;
     } 
 
+.image-adjust
+{
+   width: 100%;
+}
     .Image-Size
     {
-        height: 150px;
-        width: 150px;
+        height: 120px;
+        
     }
 }

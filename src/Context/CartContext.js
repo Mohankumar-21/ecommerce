@@ -1,10 +1,10 @@
+// CartContext.js
 import React, { useState, createContext } from 'react';
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [addedToCart, setAddedToCart] = useState(false);
 
   const addToCart = (product) => {
     const existingItemIndex = cart.findIndex(item => item.id === product.id);
@@ -15,10 +15,6 @@ const CartContextProvider = ({ children }) => {
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
     }
-    setAddedToCart(true); 
-    setTimeout(() => {
-      setAddedToCart(false); 
-    }, 2000); 
   };
 
   const increaseQuantity = (productId) => {
@@ -41,7 +37,7 @@ const CartContextProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart, addedToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

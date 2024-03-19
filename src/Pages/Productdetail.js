@@ -4,10 +4,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/Productdetail.css';
 
 const Productdetail = () => {
-  const { addToCart, addedToCart } = useContext(CartContext);
+  const { addToCart, addedToCart, cart } = useContext(CartContext);
   const navigate = useNavigate();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [quantityInCart, setQuantityInCart] = useState(0);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -27,6 +28,17 @@ const Productdetail = () => {
     addToCart(product);
   };
 
+  const productId = parseInt(id);
+
+  useEffect(() => {
+    const cartItem = cart.find(item => item.id === productId);
+    if (cartItem) {
+      setQuantityInCart(cartItem.quantity);
+    } else {
+      setQuantityInCart(0);
+    }
+  }, [cart, productId]);
+
   return (
     <div className="product-detail">
       {product && (
@@ -42,7 +54,9 @@ const Productdetail = () => {
               {addedToCart ? (
                 <p className="AddedCart" style={{ color: 'green' }}>Added to Cart</p>
               ) : (
-                <button className='addCartBtn' onClick={handleAddToCart}>Add to Cart</button>
+                <button className='addCartBtn' onClick={handleAddToCart}>
+                  Add to Cart ({quantityInCart}) 
+                </button>
               )}
             </div>
           </div>

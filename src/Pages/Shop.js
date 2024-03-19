@@ -47,19 +47,22 @@ const Shop = () => {
        {Object.entries(productsByCategory).map(([category,product])=>
        (
          <div key={category}>
+              
           <h2 className='Category'>{category}</h2>
           <div className='products'>
             {product.map(pro=>
               (
              
                 <div className='product-details'>
+                  <Link to={`/detail/${pro.id}`}>
                  <div key={pro.id} >
-                 <Link to={`/detail/${pro.id}`}>
+               
                     <img src={pro.image} alt={pro.title} />
-                  </Link>
+                
                   <h3 className='title'>{pro.title}</h3>
                   <p className='Price'> <span>Price</span>:  ${pro.price}</p>
                 </div>
+                </Link>
                 </div>
               ))}
           </div>

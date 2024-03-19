@@ -1,7 +1,6 @@
 .products img
 {
-   height: 250px;
-   width: 200px;
+   height: 150px;
    cursor: pointer;
    margin: 1.6rem 0.5rem;
 }
@@ -13,7 +12,8 @@
     padding: 8px;
     margin: 10px;
     width: 100%;
-    box-shadow: 1px 1px 6px gray;
+    border: 1px solid rgb(177, 177, 177);
+    box-shadow: 1px 1px 2px rgb(196, 196, 196);
     border-radius: 10px;
     cursor: pointer;
    
@@ -22,6 +22,12 @@
 .product-details a{
     text-decoration: none;
     color: black;
+}
+
+.product-details:hover{
+    border-color: #650fab;
+    box-shadow: 1px 1px 7px #650fab;
+    transition: 0.25s ease;
 }
 
 
