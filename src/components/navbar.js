@@ -1,33 +1,32 @@
-import React, { useState, useContext } from 'react';
+
+import React, {  useContext } from 'react';
 import '../Styles/navbar.css';
 import { Link } from 'react-router-dom';
 import { ShoppingCart } from 'phosphor-react';
-import { FaBars, FaTimes, FaSearch } from 'react-icons/fa';
-import { CartContext } from '../Context/CartContext'; // Import the CartContext
+import { FaSearch } from 'react-icons/fa';
+import { CartContext } from '../Context/CartContext'; 
 
-const Navbar = () => {
-  const [click, isClick] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
-  const { cart } = useContext(CartContext); // Access cart items from CartContext
+const Navbar = ({ searchValue, setSearchValue }) => {
 
-  const handleClick = () => {
-    isClick(!click);
-  }
+  const { cart } = useContext(CartContext);
 
-  
-  // const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value); 
+  };
+
   const cartCount = cart.length;
 
   return (
     <div className='navbar'>
       <h1>E-Commerce Website</h1>
-      <div className='links' onClick={() => isClick(false)}>
+      <div className='links'>
         <input
           className='Search-item'
           type="text"
           placeholder="Search..."
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)} />
+          onChange={handleSearchChange}
+        />
         <FaSearch className="search-icon" />
 
         <Link to="/">Shop</Link>
@@ -38,14 +37,8 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div className='navbar-toggler' onClick={handleClick}>
-        {click ?
-          (<FaTimes size={20} style={{ color: "fff" }} />) :
-          (<FaBars size={20} style={{ color: "fff" }} />)
-        }
-      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Navbar;

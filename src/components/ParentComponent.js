@@ -1,16 +1,17 @@
 
-import React from 'react';
-import CartContextA from '../Context/CartContext';
-import Productdetail from '../Pages/Productdetail';
+import React, { useState } from 'react';
+import Navbar from './navbar';
+import Shop from './Shop';
 
-const App = () => {
+const ParentComponent = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   return (
-    <CartContextA>
-      <div className="app-container">
-        <Productdetail />
-      </div>
-    </CartContextA>
+    <div>
+      <Navbar setSearchQuery={setSearchQuery} />
+      <Shop searchQuery={searchQuery} />
+    </div>
   );
 };
 
-export default App;
+export default ParentComponent;

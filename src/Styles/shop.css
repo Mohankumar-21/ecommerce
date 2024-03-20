@@ -69,6 +69,10 @@ span{
     font-weight: 500;
 }
 
+.search-bar
+{
+    display: none;
+}
 
 @media screen and (min-width: 760px) {
     .product-details {
