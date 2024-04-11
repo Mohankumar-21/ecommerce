@@ -14,12 +14,20 @@ const Navbar = ({ searchValue, setSearchValue }) => {
     setSearchValue(e.target.value); 
   };
 
+  const handleSearch = () =>
+  {
+    setSearchValue('');
+  }
+
   const cartCount = cart.length;
 
   return (
     <div className='navbar'>
       <h1>E-Commerce Website</h1>
       <div className='links'>
+       
+       
+
         <input
           className='Search-item'
           type="text"
@@ -27,7 +35,7 @@ const Navbar = ({ searchValue, setSearchValue }) => {
           value={searchValue}
           onChange={handleSearchChange}
         />
-        <FaSearch className="search-icon" />
+        <FaSearch className="search-icon" onClick={handleSearch} />
 
         <Link to="/">Shop</Link>
         <Link to="/cart">
